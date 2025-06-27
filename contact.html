@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/additional.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Contact Us - Burn Out Burger</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <header>
+      <img src="images/logo.png" alt="logo" class="logo" />
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="customers.html">Customers</a></li>
+          <li><a href="admin.php">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+
+    <section class="contactContainer" id="contactus">
+      <div class="contactTitle">
+        <h1 class="aboutName">Contact</h1>
+        <h1 class="aboutTitle">us</h1>
+      </div>
+      
+      <div class="contactForm">
+        <form id="contactForm" method="post" action="php/send_message.php">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="contact_name" id="contact_name" placeholder="Your Name" />
+            <label for="contact_name">Your Name</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="contact_email" id="contact_email" placeholder="Your Email" />
+            <label for="contact_email">Your Email</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-comment"></i>
+            <textarea name="message" id="message" placeholder="Your Message"></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn" id="submitContact">Send Message</button>
+        </form>
+      </div>
+      
+      <div class="contact">
+        <div class="emailAndPhone">
+          <img src="images/Email.svg" alt="email logo" />
+          <a href="mailto:burnburger2@gmail.com"><h3>burnburger2@gmail.com</h3></a>
+        </div>
+        <div class="emailAndPhone">
+          <img src="images/phone.svg" alt="phone" />
+          <h3>+0123456789</h3>
+        </div>
+      </div>
+      
+      <div class="locationContainer">
+        <div class="locationTitle">
+          <h2>Visit Us</h2>
+        </div>
+        <div class="location">
+          <div class="address">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>123 Burger Street, Foodville, FL 12345</p>
+          </div>
+          <div class="hours">
+            <i class="fas fa-clock"></i>
+            <div>
+              <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
+              <p>Friday - Saturday: 11:00 AM - 11:00 PM</p>
+              <p>Sunday: 12:00 PM - 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="socialMedia">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+      
+      <div id="contactErrorMessages"></div>
+    </section>
+
+    <!-- Popup Modal for Form Validation Errors -->
+    <div id="contactErrorPopup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" id="closeContactPopup">&times;</span>
+        <h3>Please fix the following errors:</h3>
+        <ul id="contactErrorList"></ul>
+      </div>
+    </div>
+
+    <hr />
+    <footer>
+      <p>&copy; 2025 Burn Out Burger. Built by Jana.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/additional.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Customers - Burn Out Burger</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <header>
+      <img src="images/logo.png" alt="logo" class="logo" />
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="customers.html">Customers</a></li>
+          <li><a href="admin.php">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+
+    <section class="customerSection" id="customers">
+      <div class="container">
+        <div class="container__left">
+          <h1>What Our Customers Say</h1>
+          <p>Our customers can't stop talking about the delicious taste of our burgers, the cozy atmosphere, and the friendly service.</p>
+          <p>Every bite brings a smile – that's why Burn Out Burger is the go-to spot for burger lovers across the city.</p>
+          <button id="addReviewBtn">Add Your Review</button>
+        </div>
+        <div class="container__right" id="reviewsContainer">
+          <div class="card">
+            <img src="images/C1.PNG" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>Hands down the best burger I've ever had! The meat was juicy, the bun was fresh, and the flavor was incredible.</p>
+                <div class="rating" data-rating="5"></div>
+                <h4>- Sara Al-Mutairi</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/C2.PNG" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>I love how clean and welcoming the place is. The staff are super friendly and the burgers are top-tier!</p>
+                <div class="rating" data-rating="4"></div>
+                <h4>- Faisal Al-Otaibi</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/C3.PNG" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>Burn Out Burger has become my weekly treat. Amazing flavors, fast service, and always fresh.</p>
+                <div class="rating" data-rating="5"></div>
+                <h4>- Reem Al-Qahtani</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review Form Modal -->
+    <div id="reviewModal" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" id="closeReviewModal">&times;</span>
+        <h3>Share Your Experience</h3>
+        <form id="reviewForm" method="post" action="php/add_review.php">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="reviewer_name" id="reviewer_name" placeholder="Your Name" />
+            <label for="reviewer_name">Your Name</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="reviewer_email" id="reviewer_email" placeholder="Your Email" />
+            <label for="reviewer_email">Your Email</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-star"></i>
+            <select name="rating" id="rating">
+              <option value="">Select Rating</option>
+              <option value="5">5 Stars - Excellent</option>
+              <option value="4">4 Stars - Very Good</option>
+              <option value="3">3 Stars - Good</option>
+              <option value="2">2 Stars - Fair</option>
+              <option value="1">1 Star - Poor</option>
+            </select>
+            <label for="rating">Rating</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-comment"></i>
+            <textarea name="review_text" id="review_text" placeholder="Your Review"></textarea>
+            <label for="review_text">Your Review</label>
+          </div>
+          <button type="submit" class="btn" id="submitReview">Submit Review</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Validation Error Modal -->
+    <div id="reviewErrorPopup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" id="closeReviewErrorPopup">&times;</span>
+        <h3>Please fix the following errors:</h3>
+        <ul id="reviewErrorList"></ul>
+      </div>
+    </div>
+
+    <hr />
+    <footer>
+      <p>&copy; 2025 Burn Out Burger. Built by Jana.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const ratings = document.querySelectorAll(".rating");
+        ratings.forEach(rating => {
+          const stars = parseInt(rating.dataset.rating);
+          let starsHTML = "";
+          for (let i = 1; i <= 5; i++) {
+            starsHTML += `<span style="color: gold; font-size: 1.2rem;">${i <= stars ? "★" : "☆"}</span>`;
+          }
+          rating.innerHTML = starsHTML;
+        });
+      });
+    </script>
+    <script src="js/customers.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Place Order</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/additional.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="images/logo.png" alt="logo" class="logo" />
+    <nav class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="order.html" class="active">Order</a></li>
+        <li><a href="customers.html">Customers</a></li>
+        <li><a href="admin.php">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Order Form -->
+  <section class="orderContainer">
+    <h2 class="form-title">Place Your Order</h2>
+    <form action="place_order.php" method="POST">
+      <div class="input-group">
+        <input type="text" name="customer_name" required placeholder=" " />
+        <label>Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" required placeholder=" " />
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" name="phone" required placeholder=" " />
+        <label>Phone</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" name="address" required placeholder=" " />
+        <label>Address</label>
+      </div>
+
+      <div class="input-group">
+        <select name="burger_type" required>
+          <option value="" disabled selected>Select your burger</option>
+          <option value="Classic Beef Burger">Classic Beef Burger</option>
+          <option value="Cheese Burger">Cheese Burger</option>
+          <option value="Chicken Burger">Chicken Burger</option>
+          <option value="Spicy Chicken Burger">Spicy Chicken Burger</option>
+          <option value="Vegan Burger">Vegan Burger</option>
+          <option value="BBQ Burger">BBQ Burger</option>
+        </select>
+        <label>Burger Type</label>
+      </div>
+      
+
+      <div class="input-group">
+        <input type="number" name="quantity" min="1" required placeholder=" " />
+        <label>Quantity</label>
+      </div>
+
+      <div class="input-group">
+        <textarea name="special_instructions" placeholder=" "></textarea>
+        <label>Special Instructions</label>
+      </div>
+
+      <button class="btn" type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Burn Out Burger. Built by Jana.</p>
+  </footer>
+
+</body>
+</html>
